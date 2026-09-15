@@ -922,7 +922,12 @@
     <h2>Advisory Council</h2>
     <p class="advisory-intro">Senior policymakers, scholars, and practitioners who advise the work. Click any name for a bio.</p>
     <div class="advisor-grid">
-      
+
+      <button class="advisor-card" data-advisor="brearley" type="button">
+        <div class="advisor-avatar"><img src="images/emily-brearley.webp" alt="Emily Brearley"></div>
+        <div class="advisor-name">Emily Brearley</div>
+        <div class="advisor-affil">Economist; founder, Solution42.Org; former World Bank, IDB, and USAID</div>
+      </button>
       <button class="advisor-card" data-advisor="burks" type="button">
         <div class="advisor-avatar"><img src="images/jonathan-burks.webp" alt="Jonathan Burks"></div>
         <div class="advisor-name">Jonathan Burks</div>
@@ -978,7 +983,16 @@
         <div class="advisor-name">Nate Soule</div>
         <div class="advisor-affil">Executive Director, Campaign for America First International Assistance</div>
       </button>
-      
+      <button class="advisor-card" data-advisor="steiger" type="button">
+        <div class="advisor-avatar"><img src="images/bill-steiger.webp" alt="Bill Steiger"></div>
+        <div class="advisor-name">Bill Steiger</div>
+        <div class="advisor-affil">CEO, Malaria No More; former Chief of Staff, USAID</div>
+      </button>
+      <button class="advisor-card" data-advisor="wade" type="button">
+        <div class="advisor-avatar"><img src="images/magatte-wade.webp" alt="Magatte Wade"></div>
+        <div class="advisor-name">Magatte Wade</div>
+        <div class="advisor-affil">Author of <em>The Heart of a Cheetah</em>; Senior Fellow, Atlas Network</div>
+      </button>
       <button class="advisor-card" data-advisor="wydick" type="button">
         <div class="advisor-avatar"><img src="images/bruce-wydick.webp" alt="Bruce Wydick"></div>
         <div class="advisor-name">Bruce Wydick</div>
@@ -1149,6 +1163,24 @@ const ADVISORS = {
     bio: 'Communications and political strategist, currently Executive Director of the Campaign for America First International Assistance (CAFIA). Previously Chief of Staff to Rep. Mike Lawler (R-NY-17), overseeing one of the most active offices in Congress, and before that his Deputy Chief of Staff and Communications Director, providing senior strategic counsel and leading communications and constituent outreach through one of the country’s most competitive House races. BA from Franklin & Marshall College.'
   ,
     photo: 'images/nate-soule.webp'
+  },
+  brearley: {
+    name: 'Emily Brearley',
+    affil: 'Economist; founder, Solution42.Org; former World Bank, IDB, and USAID',
+    bio: 'Economist focused on finding simple solutions to complex problems. With 25 years of experience at global institutions including the World Bank, Inter-American Development Bank, and USAID, she has deep expertise designing high-impact programs that drive sustainable economic growth in emerging markets. Her company, Solution42.Org, designs innovative finance solutions for climate and women\u2019s empowerment, and pioneers disaster risk management plans aimed at saving lives across sub-Saharan Africa. Her career began 25 years ago at the World Bank, working with farmers, indigenous entrepreneurs, and women\u2019s collectives on sustainable livelihoods and poverty reduction, across land, disaster risk management, and safety net programs. Recognized as a global thought leader on women\u2019s empowerment and climate ethics; has led teams designing mechanisms such as debt-for-nature swaps and community-based disaster risk protocols. Ph.D. in economics from Johns Hopkins University; Fulbright Scholar.',
+    photo: 'images/emily-brearley.webp'
+  },
+  steiger: {
+    name: 'Bill Steiger',
+    affil: 'CEO, Malaria No More; former Chief of Staff, USAID',
+    bio: 'CEO of Malaria No More. Previously served as chief of staff at USAID under Administrator Mark Green during the first Trump administration, and as managing director of Pink Ribbon Red Ribbon, a public-private partnership fighting cervical and breast cancer in the developing world. From 2001\u20132009, directed the Office of Global Health Affairs at HHS and served as special assistant for international affairs to the HHS Secretary, including terms on the WHO executive board, the PAHO executive committee, and the board of the Global Fund to Fight AIDS, Tuberculosis and Malaria. Ph.D. in Latin American history from UCLA; bachelor\u2019s degree from Yale.',
+    photo: 'images/bill-steiger.webp'
+  },
+  wade: {
+    name: 'Magatte Wade',
+    affil: 'Author of <em>The Heart of a Cheetah</em>; Senior Fellow, Atlas Network',
+    bio: 'Entrepreneur, author, and advocate for African prosperity. Author of <em>The Heart of a Cheetah: How We Have Been Lied to About African Poverty and What It Means for Human Flourishing</em>. More than a decade of experience designing and developing next-generation special economic zones grounded in best-in-class law and governance, as well as extensive experience working with African governments to advance these initiatives. Her work focuses on entrepreneurship, economic freedom, trade and investment, and access to affordable, reliable, and abundant energy as foundations of durable prosperity. Trustee of the John Templeton Foundation; member of the Advisory Board of the Alliance for Responsible Citizenship; Senior Fellow for Initiatives for Africa at Atlas Network. Recipient of the Competitive Enterprise Institute\u2019s (CEI) 2024 Julian L. Simon Memorial Award. Featured in the award-winning documentaries Poverty, Inc. and Made in M\u00e9kh\u00e9, as well as She Rises Up, now airing on PBS.',
+    photo: 'images/magatte-wade.webp'
   }
 };
 
