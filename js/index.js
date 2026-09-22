@@ -103,10 +103,14 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
       if (!useDesktopChartLayout()) return;
       if (!chart.$lineDrawDone) return;
       var ctx = chart.ctx;
+      var fontSize = 12.5;
+      var minGap = fontSize + 4;
       ctx.save();
-      ctx.font = '600 12.5px Newsreader, Georgia, serif';
+      ctx.font = '600 ' + fontSize + 'px Newsreader, Georgia, serif';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
+
+      var labels = [];
       chart.data.datasets.forEach(function (dataset, i) {
         var meta = chart.getDatasetMeta(i);
         if (!meta || meta.hidden || !meta.data.length) return;
@@ -114,8 +118,27 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
         if (lastVal == null) return;
         var pt = meta.data[meta.data.length - 1];
         if (!pt || pt.skip) return;
-        ctx.fillStyle = dataset.borderColor;
-        ctx.fillText(dataset.label, pt.x + 10, pt.y);
+        labels.push({
+          text: dataset.label,
+          color: dataset.borderColor,
+          x: pt.x + 10,
+          y: pt.y
+        });
+      });
+
+      // Bottom-to-top: keep lower labels on their points; push colliding ones above up.
+      labels.sort(function (a, b) { return b.y - a.y; });
+      for (var i = 1; i < labels.length; i++) {
+        var below = labels[i - 1];
+        var current = labels[i];
+        if (below.y - current.y < minGap) {
+          current.y = below.y - minGap;
+        }
+      }
+
+      labels.forEach(function (label) {
+        ctx.fillStyle = label.color;
+        ctx.fillText(label.text, label.x, label.y);
       });
       ctx.restore();
     }
