@@ -105,11 +105,12 @@ for (const vp of viewports) {
       await expect(contactEmail).toBeVisible();
       await expect(newsletterHeading).toBeVisible();
 
-      const typePx = isTablet(vp.width) ? 34 : 26;
+      const contactPx = isTablet(vp.width) ? 34 : 26;
+      const newsletterPx = isTablet(vp.width) ? 30 : 22;
       const emailPx = isTablet(vp.width) ? 34 : 16;
-      await assertFontSizePx(contactHeading, typePx);
+      await assertFontSizePx(contactHeading, contactPx);
       await assertFontSizePx(contactEmail, emailPx);
-      await assertFontSizePx(newsletterHeading, typePx);
+      await assertFontSizePx(newsletterHeading, newsletterPx);
 
       if (isTablet(vp.width)) {
         const mark = page.locator('img[alt="Powered by shapeshift"]');
